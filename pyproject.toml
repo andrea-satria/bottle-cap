@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bsort"
+version = "0.1.0"
+description = "Bottle Cap Detection & Sorting System"
+authors = [{name = "Nama Kamu", email = "email@kamu.com"}]
+requires-python = ">=3.9"
+dependencies = [
+    "ultralytics>=8.0.0",
+    "typer[all]>=0.9.0",
+    "pyyaml>=6.0",
+    "wandb>=0.16.0",
+    "opencv-python-headless>=4.8.0",
+    "onnx>=1.14.0",
+    "onnxruntime>=1.16.0"
+]
+
+[project.scripts]
+bsort = "bsort.main:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pylint",
+    "black",
+    "isort"
+]
+
+
+[tool.setuptools]
+packages = ["bsort"]
+
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"

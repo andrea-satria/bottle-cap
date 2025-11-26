@@ -1,0 +1,17 @@
+project_name: "bottleCap-detection"
+
+model:
+  architecture: "yolov10n.pt"
+  weights_path: "weights/best.pt"  # <--- Ini path file model kamu
+  imgsz: 320
+  device: "cpu"
+
+train:
+  data_path: "dataset/data.yaml"
+  epochs: 50
+  batch_size: 8
+  patience: 30
+
+inference:
+  conf_threshold: 0.25
+  save_dir: "inference_results"
